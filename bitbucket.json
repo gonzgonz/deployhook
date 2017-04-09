@@ -1,0 +1,21 @@
+{
+    "port" : 8888,
+    "repositories" : {
+        "sampleapp" : {
+            "branches" : {
+                "build": {
+                   "basepath" : "/home/deploy/ansible/current",
+                   "command" : "ansible-playbook -i staging apps/sampleapp/deploy_staging.yml"
+                }
+            }
+        },
+        "ansiblerepo" : {
+            "branches" : {
+                "master": {
+                   "basepath" : "/home/deploy/ansiblerepo/current",
+                   "command" : "ansible-playbook -i production apps/ansiblerepo/deploy_production.yml"
+                }
+            }
+        }
+    }
+}
